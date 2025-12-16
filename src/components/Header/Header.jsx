@@ -1,72 +1,103 @@
-import React from "react";
-import {Link, NavLink} from 'react-router-dom'
-import "./font-family.css";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="shadow sticky z-50 top-0">
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="/" className="flex items-center font-container text-red-500 font-bold text-2xl font-sans">
-            Anshu
+    <header className="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        {/* Logo / Name */}
+        <Link
+          to="/"
+          className="text-xl font-bold text-white tracking-wide"
+        >
+          Anshu<span className="text-red-500">.</span>
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8 text-gray-300">
+          <Link to="/" className="hover:text-white transition">
+            Home
           </Link>
-          <div
-            className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-            id="mobile-menu-2"
+          <Link to="/about" className="hover:text-white transition">
+            About
+          </Link>
+          <Link to="/projects" className="hover:text-white transition">
+            Projects
+          </Link>
+          <Link to="/contact" className="hover:text-white transition">
+            Contact
+          </Link>
+
+          {/* Resume Button */}
+          <a
+            href="https://drive.google.com/file/d/1-tjjicaj-3EXstCCXnhnVYpv0GmwC3bm/view"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-4 bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-full font-semibold transition"
           >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-red-500" : "text-gray-700"
-                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-red-500" : "text-gray-700"
-                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-red-500" : "text-gray-700"
-                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                  }
-                >
-                  Contact
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/github"
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-red-500" : "text-gray-700"
-                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                  }
-                >
-                  Github
-                </NavLink>
-              </li>
-            </ul>
+            Resume
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-white focus:outline-none"
+        >
+          <svg
+            className="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            {open ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden bg-black border-t border-gray-800">
+          <div className="flex flex-col items-center gap-6 py-6 text-gray-300">
+            <Link to="/" onClick={() => setOpen(false)}>
+              Home
+            </Link>
+            <Link to="/about" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link to="/projects" onClick={() => setOpen(false)}>
+              Projects
+            </Link>
+            <Link to="/contact" onClick={() => setOpen(false)}>
+              Contact
+            </Link>
+            <a
+              href="https://drive.google.com/file/d/1-tjjicaj-3EXstCCXnhnVYpv0GmwC3bm/view"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold"
+            >
+              Resume
+            </a>
           </div>
         </div>
-      </nav>
+      )}
     </header>
   );
 }

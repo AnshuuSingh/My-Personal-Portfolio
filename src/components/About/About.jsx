@@ -2,40 +2,68 @@ import React from "react";
 
 function About() {
   return (
-    <section className="bg-gray-900 text-white w-full min-h-screen flex items-center justify-center">
-      <div className="flex flex-col gap-20 w-full lg:flex-row items-center max-w-6xl">
-        {/* Profile Image with red Background */}
-        <div className="relative ml-16 h-64 lg:w-80 lg:h-80 flex-shrink-0 mb-8 lg:mb-0 lg:mr-8">
-          <div className="absolute inset-0 bg-red-500 rounded-full transform scale-110"></div>
-          <img
-            src="pic2.jpg" // Replace this with your profile image URL
-            alt="Profile"
-            className="relative w-full h-full object-cover rounded-full"
-          />
-        </div>
-        {/* Text Content */}
-        <div className="lg:ml-8 ml-14 text-center lg:text-left ">
-          <h2 className="text-4xl font-bold mb-4">
-            ABOUT <span className="text-red-500">ME</span>
-          </h2>
-          <p className="text-gray-400 text-xl mb-6">
-          Hi, I am a BTech CSE student at NIT Durgapur. 
-          </p>
-          <h3 className="text-2xl font-semibold mb-4">A Little About Myself</h3>
-          <p className="text-gray-400 mb-4 text-xl">
-            I am passionate about
-            software development. Fairly proficient in some programming languages C,C++
-            and javascript. I am well-versed in web development frameworks like
-            HTML/CSS, Bootstrap and ReactJS. Additionally, I have experience
-            working with databases like MySQL, MongoDB.
-            <br />
-            <br />
-          </p>
-          <a href="/resume.pdf" download="My_Resume.pdf">
-            <button className="bg-red-500 hover:bg-gray-700 text-white py-2 px-6 rounded-full font-semibold">
-              Download CV
-            </button>
-          </a>
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center">
+      {/* Background Glow */}
+      <div className="absolute top-20 left-20 w-72 h-72 bg-red-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* LEFT IMAGE */}
+          <div className="order-1 flex justify-center lg:justify-start">
+            <div className="relative">
+              <div className="absolute inset-0 bg-red-500 rounded-full blur-2xl opacity-30"></div>
+              <img
+                src="forPortfolio-removebg-preview.png"
+                alt="Anshu Kumari"
+                className="relative w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-800"
+              />
+            </div>
+          </div>
+
+          {/* RIGHT CONTENT */}
+          <div className="order-2 text-white">
+            <p className="text-red-500 font-semibold tracking-widest mb-4">
+              ABOUT ME
+            </p>
+
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+              Know <span className="text-red-500">About Me</span>
+            </h1>
+
+            <p className="mt-6 text-lg text-gray-400 max-w-xl">
+              I am a 3rd year Computer Science and Engineering undergraduate at
+              National Institute of Technology, Durgapur. I have a strong
+              interest in frontend development and problem solving, and I enjoy
+              building clean, scalable web applications using modern
+              technologies.
+            </p>
+
+            <p className="mt-4 text-lg text-gray-400 max-w-xl">
+              I enjoy working with React.js, JavaScript, and modern CSS
+              frameworks, and I actively practice Data Structures & Algorithms
+              to strengthen my problem-solving skills.
+            </p>
+
+            {/* Badges */}
+            <div className="mt-10 flex flex-wrap gap-3 text-sm text-gray-400">
+              <span className="px-3 py-1 border border-gray-700 rounded-full">
+                C
+              </span>
+              <span className="px-3 py-1 border border-gray-700 rounded-full">
+                C++
+              </span>
+              <span className="px-3 py-1 border border-gray-700 rounded-full">
+                Javascript
+              </span>
+              <span className="px-3 py-1 border border-gray-700 rounded-full">
+                MySQL
+              </span>
+              <span className="px-3 py-1 border border-gray-700 rounded-full">
+                DSA
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

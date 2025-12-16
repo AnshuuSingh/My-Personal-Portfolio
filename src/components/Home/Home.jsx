@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import profileImg from "../assets/forPortfolio-removebg-preview.png";
+import profileImg from "/src/assets/forPortfolio-removebg-preview.png";
 
 
 function Home() {

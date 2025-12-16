@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import profileImg from "../assets/forPortfolio-removebg-preview.png";
+
 
 function Home() {
   return (
@@ -54,7 +56,7 @@ function Home() {
           <div className="relative">
             <div className="absolute inset-0 bg-red-500 rounded-full blur-2xl opacity-30"></div>
             <img
-              src="forPortfolio-removebg-preview.png"
+              src={profileImg}
               alt="Anshu Kumari"
               className="relative w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-800"
             />

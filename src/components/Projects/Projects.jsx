@@ -1,6 +1,7 @@
 import React from "react";
 import automobImg from "/src/assets/automob.png";
 import portfolioImg from "/Portfolio.png";
+import quoteImg from "/src/assets/quote.png";
 
 const projects = [
   {
@@ -25,7 +26,7 @@ const projects = [
       "A collection of 10+ interactive JavaScript applications including Weather App, Notes Manager, and Quote Generator.",
     tech: ["JavaScript", "APIs", "HTML", "CSS"],
     github: "https://github.com/your-js-projects",
-    image: automobImg,
+    image: quoteImg,
   },
 ];
 

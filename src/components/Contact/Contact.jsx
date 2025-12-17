@@ -2,54 +2,64 @@ import React from "react";
 
 function Contact() {
   return (
-    <section className="min-h-screen bg-gray-900 flex items-center justify-center px-6">
-      <div className="max-w-5xl w-full bg-white rounded-lg shadow-lg grid md:grid-cols-2 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center">
+      
+      {/* Background Glow */}
+      <div className="absolute top-24 left-24 w-72 h-72 bg-red-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-24 right-24 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Info */}
-        <div className="p-8 bg-gray-100">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Get in Touch
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Open to internship opportunities and collaborations.
+        {/* LEFT CONTENT */}
+        <div className="text-white">
+          <p className="text-red-500 font-semibold tracking-widest mb-4">
+            CONTACT
           </p>
 
-          <p className="text-gray-700 mb-3">
-            📍 NIT Durgapur, West Bengal
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Let’s <span className="text-red-500">Connect</span>
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-400 max-w-xl">
+            Open to internship opportunities and exciting
+            frontend projects. Feel free to reach out!
           </p>
-          <p className="text-gray-700 mb-3">
-            📞 +91 9389966470
-          </p>
-          <p className="text-gray-700">
-            ✉️ anshusingh0028@gmail.com
-          </p>
+
+          <div className="mt-8 space-y-4 text-gray-300">
+            <p>📍 NIT Durgapur, West Bengal</p>
+            <p>📞 +91 9389966470</p>
+            <p>✉️ anshusingh0028@gmail.com</p>
+          </div>
         </div>
 
-        {/* Form */}
-        <form className="p-8 flex flex-col gap-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-red-500"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-red-500"
-          />
-          <textarea
-            rows="4"
-            placeholder="Message"
-            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-red-500"
-          />
+        {/* RIGHT FORM */}
+        <div className="bg-gray-900/70 backdrop-blur-md border border-gray-800 rounded-2xl p-8">
+          <form className="flex flex-col gap-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="bg-gray-800 text-white border border-gray-700 rounded-md px-4 py-3 focus:outline-none focus:border-red-500"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="bg-gray-800 text-white border border-gray-700 rounded-md px-4 py-3 focus:outline-none focus:border-red-500"
+            />
+            <textarea
+              rows="4"
+              placeholder="Message"
+              className="bg-gray-800 text-white border border-gray-700 rounded-md px-4 py-3 focus:outline-none focus:border-red-500"
+            />
 
-          <button
-            type="submit"
-            className="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-md transition"
-          >
-            Send Message
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="mt-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-full transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
       </div>
     </section>
   );
